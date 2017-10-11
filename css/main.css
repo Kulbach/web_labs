@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+@import url('https://fonts.googleapis.com/css?family=Abel');
+body {
+background-color: #f2f2f2;
+font-family: "Times New Roman";
+font-size: 16px;
+-webkit-font-smoothing: antialiased; /*гладкий шрифт*/
+-webkit-overflow-scrolling: touch;
+}
+.navbar {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.navbar-inverse {
+	background: #333;
+	border-color: #2d2d2d;
+}
+.navbar-inverse .navbar-nav > .active > a {
+	background-color: #ff7878;
+}
+.navbar-inverse .navbar-brand {
+	font-family: 'Abel', sans-serif;
+	font-weight: bold;
+	font-size: 38px;
+	color: #999;
+	letter-spacing: 1px;
+}
+#headerwrap{
+	background: url(../img/back.jpg) no-repeat center top;
+	margin-top: -10px;
+	padding-top: 20px;
+	text-align: center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 500px;
+	width: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	opacity: 0.9;
+}
+h3, h4 {
+	text-align: center;
+	font-family: 'Lora', serif;
+	padding: 25px 0;
+}
+.text {
+	text-align: justify;
+	font-size: 18px;
+	background: #fff;
+}
+.cl {
+	background-color: #333;
+	color: #bbb;
+	padding-bottom: 20px;
+}
+.st {
+	width: 100%;
+	margin-top: 50px;
+
+}
+.dropdown-menu {
+	background-color: #333;
+}
+.navbar-inverse .dropdown-menu a{
+color: white;
+font-size: 14px;
+font-family: 'Lora', serif;
+height: 40px;
+padding-top: 10px;
+}
+.navbar-inverse .dropdown-menu a:hover {
+	background-color: white;
+}
+.footer {
+	background-color: #ff7878;
+	color: white;
+	height: 20px;
+}
