@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lora');
 @import url('https://fonts.googleapis.com/css?family=Abel');
 body {
-background-color: #f2f2f2;
+background-color: white;
 font-family: "Times New Roman";
 font-size: 16px;
 -webkit-font-smoothing: antialiased; /*гладкий шрифт*/
@@ -12,7 +12,7 @@ font-size: 16px;
 	padding-bottom: 15px;
 }
 .navbar-inverse {
-	background: #333;
+	background: #000;
 	border-color: #2d2d2d;
 }
 .navbar-inverse .navbar-nav > .active > a {
@@ -26,7 +26,7 @@ font-size: 16px;
 	letter-spacing: 1px;
 }
 #headerwrap{
-	background: url(../img/back.jpg) no-repeat center top;
+	background: url(../img/back.jpg) no-repeat right top;
 	margin-top: -10px;
 	padding-top: 20px;
 	text-align: center;
@@ -40,10 +40,17 @@ font-size: 16px;
 	background-size: cover;
 	opacity: 0.9;
 }
-h3, h4 {
+ h3, h4 {
 	text-align: center;
 	font-family: 'Lora', serif;
 	padding: 25px 0;
+}
+h1 {
+	text-align: center;
+	font-family: 'Lora', serif;
+}
+.container {
+	text-align: justify;
 }
 .text {
 	text-align: justify;
@@ -55,13 +62,27 @@ h3, h4 {
 	color: #bbb;
 	padding-bottom: 20px;
 }
+.cln {
+	margin-top: 100px;
+	color: #000;
+	padding-bottom: 20px;
+}
 .st {
 	width: 100%;
 	margin-top: 50px;
-
+}
+.mb {
+	margin-bottom: 110px;
+}
+.bod {
+	 border: 1px solid black;
+	border-radius: 10px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
 }
 .dropdown-menu {
 	background-color: #333;
+	z-index: 999;
 }
 .navbar-inverse .dropdown-menu a{
 color: white;
@@ -73,6 +94,37 @@ padding-top: 10px;
 .navbar-inverse .dropdown-menu a:hover {
 	background-color: white;
 }
+.rev {
+	margin-top: 110px;
+}
+.sz {
+	font-size: 20px;
+}
+.rg {
+	float: right;
+	margin-bottom: 20px;
+}
+.w {
+	width: 300px;
+}
+.btn-success {
+	background: #000;
+	 color: #9d9d9d;
+	font-size: 16px;
+}
+.btn-success:hover {
+	color: white;
+	background: #000;
+}
+time {
+	font-style: oblique;
+	color: brown;
+	font-size: 14px;
+}
+.table {
+	margin-top: 20px;
+}
+
 .footer {
 	background-color: #ff7878;
 	color: white;
