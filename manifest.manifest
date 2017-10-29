@@ -1,0 +1,22 @@
+CACHE MANIFEST
+CACHE:
+index.html
+news.html
+plan.html
+js/bootstrap.min.js
+js/myscript.js
+js/jquery-3.2.1.min.js
+img/1.jpg
+img/2.jpg
+img/3.jpg
+img/back.jpg
+img/camera.png
+css/bootstrap.css
+css/main.css
+
+NETWORK:
+rev.html
+admin.html
+
+FALLBACK:
+offline.html

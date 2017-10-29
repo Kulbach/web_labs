@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Lora');
-@import url('https://fonts.googleapis.com/css?family=Abel');
+/*@import url('https://fonts.googleapis.com/css?family=Lora');
+@import url('https://fonts.googleapis.com/css?family=Abel');*/
 body {
 background-color: white;
 font-family: "Times New Roman";
@@ -19,7 +19,7 @@ font-size: 16px;
 	background-color: #ff7878;
 }
 .navbar-inverse .navbar-brand {
-	font-family: 'Abel', sans-serif;
+	/*font-family: 'Abel', sans-serif;*/
 	font-weight: bold;
 	font-size: 38px;
 	color: #999;
@@ -47,7 +47,7 @@ font-size: 16px;
 }
 h1 {
 	text-align: center;
-	font-family: 'Lora', serif;
+	/*font-family: 'Lora', serif;*/
 }
 .container {
 	text-align: justify;
@@ -123,6 +123,13 @@ time {
 }
 .table {
 	margin-top: 20px;
+}
+.lk {
+	color: red;
+}
+.lk:hover {
+text-decoration: none;
+font-weight: bold;
 }
 
 .footer {
