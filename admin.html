@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="css/bootstrap.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	 <div class="navbar navbar-inverse navbar-fixed-top">
+   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -40,29 +40,26 @@
     </div>
   </div>
   <div class="container rev mb">
-  <div class="col-lg-6 col-sm-12 col-xs-12">
-  <h5>Завантажити фото:</h5>
- <div class="form-group row">
- <div class="col-xs-9 col-lg-9">
-  <input type="text" class=" form-control"  id="text" placeholder="path">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-4 col-sm-12 col-xs-12">
+  <form name="form" action="#" method="post" id="form" onsubmit="return false">
+ <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">Завантажити фото:</span>
+<label class="btn btn-default btn-file">
+    Browse <input type="file" id="image_file" style="display: none;">
+</label>
  </div>
- <button type="submit" class="btn btn-success">Обзор</button>
- </div>
-  <img src="img/camera.png" class="img-responsive">
+  <img src="img/camera.png" id="img" class="img-responsive">
  </div>
  <div class="col-lg-6 col-sm-12 col-xs-12">
- 	<form role="form"> 
- 	<div class="form-group">
- 	<input type="text" placeholder="Заголовок" class="form-control">
- 	</div>
- 	<div class="form-group">
- 	 <textarea class="form-control" rows="3" placeholder="Короткий опис"></textarea>
- 	 </div>
- 		<div class="form-group">
- 	 <textarea class="form-control" rows="10" placeholder="Довгий опис"></textarea>
- 	 </div>
- 	  <button type="submit" class="btn btn-success rg">Відправити</button>
- 	</form>
+  <div class="form-group">
+  <input type="text" id="title" placeholder="Заголовок" class="form-control">
+  </div>
+    <div class="form-group">
+   <textarea class="form-control" id="descr" rows="10" placeholder="Опис"></textarea>
+   </div>
+    <button type="submit" id="send_news" class="btn btn-success rg">Відправити</button>
+  </form>
  </div>
  </div>
  </div>
@@ -77,5 +74,7 @@
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
    <script src="js/myscript.js"></script>
+    <script src="http://rawgit.com/notifyjs/notifyjs/master/dist/notify.js"></script>
+   <script src="js/news.js"></script>
 </body>
 </html>
