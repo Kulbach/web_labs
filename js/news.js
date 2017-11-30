@@ -3,28 +3,30 @@ $(document).ready(function (){
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
-
+        var file;
         reader.onload = function (e) {
             $('#img').attr('src', e.target.result);
         };
 				reader.readAsDataURL(input.files[0]);
     }
 }
-function readImage(fileInput, n) { //Загрузка изображения
-          if ( fileInput.files && fileInput.files[0] ) {
+function readImage(src, target) { //Загрузка изображения
             var FR= new FileReader();
             FR.onload = function(e) {
-              localStorage.setItem('newsImage' + (n+1), e.target.result); 
+             target.src = this.result;
             };       
-            FR.readAsDataURL( fileInput.files[0] );
+            FR.readAsDataURL( src.files[0] );
+            return target.src;
           }
-        }
+       
 $("input[type=file]").change(function(){
     readURL(this);
 });
 function isOnline() {
     return window.navigator.onLine; 
 }
+
+rev = new CN(); 
 
 $(document).on("click", "#send_news", function (){
 
@@ -59,22 +61,29 @@ $(document).on("click", "#send_news", function (){
 			if(error!=true){
 				document.getElementById("descr").style.borderColor="grey";
 				document.getElementById("title").style.borderColor = "grey";
+				title = $("#title").val();
+				descr = $("#descr").val();
+				target = document.getElementById('img');
+				src = document.getElementById('image_file');
+				imgData = readImage(src, target);
+				var news = {
+						title: title,
+						descr: descr,
+						image: imgData
+					};
+				var obj= JSON.stringify(news);
 			if(navigator.onLine){
-				alert("Кидаю на сервер і читаю з сервера");}
+				alert("Кидаю на сервер і читаю з сервера");
+			}
 				else {
-					n =0;
-					s = localStorage;
-					for (var i = 0; i < s.length; i++) {
-						key = s.key(i);
-							if(~key.indexOf("newsTitle")){
-								n++;
-							}
-					}
-						readImage($("#image_file")[0], n);
-						localStorage.setItem("newsTitle" + (n+1), $("#title").val());
-						localStorage.setItem("newsDescr" + (n+1), $("#descr").val());
+						if(useLocalStorage){
+							rev.addToLSNews(obj);
+						}
+						else {
+							rev.addToDBNews(news);
+						}
 				}
-				$('#img').attr('src', "img/camera.png");
+				readURL('img/camera.png")');
 				$("#descr").val("");
 				$("#title").val("");
 		}

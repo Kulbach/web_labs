@@ -1,50 +1,51 @@
 $(document).ready(function (){
 	s = localStorage;
-	if (s.getItem('comment1')) {
-		for (var i = 0; i < s.length; i++) {
-				key = s.key(i);
-				if(~key.indexOf("comment")){
-							id = key.substr(7);
-							comment = s.getItem("comment" +id);
-							var date = new Date();
-							$("#comments").prepend("<div class='container bod'><h2>Вася Пупкін  <time>" + date.getDate() + "." + (date.getMonth()+1) +"." + date.getFullYear() + "</time></h2>"  + comment + "</div>");
-	}
-}}
+
+rev = new CN(); 
 
 window.addEventListener('online', function(e) {
-	k = false; 
-	for (var i = 0; i < s.length; i++) {
-				key = s.key(i);
-				if(~key.indexOf("comment")){
-					k = true;
-				}
-			}
-				if(k){
-					alert("Відправляю дані с LS на север");}
-				
-});
+				alert("Відправляю дані с LS на север");
+				readReview();
+			
+});	
 
-	$(document).on("click", "#add_comment", function (){
+$(document).on("click", "#add_comment", function (){
 		if($("#comment").val()!=""){
-			var comment = $("#comment").val();
 			var date = new Date();
+			var comment = $("#comment").val();
+			var time = date.getDate() + "." + (date.getMonth()+1) +"." + date.getFullYear();
+			var out = document.createElement('div');
+			out.id = 'review';
+			var review = {
+				message: comment,
+				when: time
+			};
+			out.innerHTML = "<div class='container bod'><h2>Вася Пупкін  <time>" + 
+			review.when + "</time></h2>"  + 
+			review.message + "</div>";
+			var obj= JSON.stringify(review);
 		if(navigator.onLine){
-			alert("Відправляю на сервер і читаю з сервера");
-			$("#comments").prepend("<div class='container bod'><h2>Вася Пупкін  <time>" + date.getDate() + "." + (date.getMonth()+1) +"." + date.getFullYear() + "</time></h2>"  + comment + "</div>");
+			$("#comments").prepend(out);
 		}
 		else{
-			n =0;
-					for (var i = 0; i < s.length; i++) {
-						key = s.key(i);
-							if(~key.indexOf("comment")){
-								n++;
-							}
-					}
-				localStorage.setItem("comment"+(n+1), comment);
-				$("#comments").prepend("<div class='container bod'><h2>Вася Пупкін  <time>" + date.getDate() + "." + (date.getMonth()+1) +"." + date.getFullYear() + "</time></h2>"  + comment + "</div>");
+			if(useLocalStorage){
+			rev.addToLSComment(obj);}
+			else
+			{
+				rev.addToDBComment(review);
+			}
 		}
-		$("#comment").val("");
+				$("#comment").val("");
+
+	}
+});
+
+	function readReview (){
+		if(useLocalStorage){
+			rev.getFromLSComment();
+			}
+		else {
+			rev.getFromDBComment();
 		}
-	});
-	
+	}		
 });
