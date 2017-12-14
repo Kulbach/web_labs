@@ -73,7 +73,13 @@ $(document).on("click", "#send_news", function (){
 					};
 				var obj= JSON.stringify(news);
 			if(navigator.onLine){
-				alert("Кидаю на сервер і читаю з сервера");
+				fetch('http://localhost:3000/articles', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: obj
+            });
 			}
 				else {
 						if(useLocalStorage){

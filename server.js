@@ -20,6 +20,6 @@ app.use(function(err, req, res, next){
 	console.log({error: err.message});
 });
 
-app.listen(8080,function(){
+app.listen(3000,function(){
 console.log("Server is running on port 3000")
 });
